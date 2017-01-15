@@ -1,0 +1,24 @@
+{% extends "layouts/skeleton.nunj" %}
+{% import "macros/navigation.nunj" as nav %}
+
+{% block page %}
+
+<div class="Frame" id="frame">
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <img src="{{ '/assets/images/tera-logo.svg' | path }}" alt="">
+            {% include 'partials/navigation/navigation.nunj' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
